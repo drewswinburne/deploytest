@@ -31,13 +31,9 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
           path: './github'
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./github
-
+       - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
 
             
